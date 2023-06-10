@@ -19,8 +19,6 @@ public class ObjectInPool : MonoBehaviour
         if (resetScale) transform.localScale = defaultScale;
         if (resetPosition) transform.position = Vector3.zero;
 
-        var poolReturn = GetComponent<PoolReturnAtTime>();
-        if (poolReturn)
-            poolReturn.inProgress = false;
+
     }
 }
