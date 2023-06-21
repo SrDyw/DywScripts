@@ -34,6 +34,13 @@ public class Timer : MonoBehaviour
         StartCoroutine(TimerCoroutine());
         return this;
     }
+
+    public Timer RestartTimer(float time, Action callback = null) {
+        if (callback != null) callback();
+
+        active = true;
+        return Init(time, this.onTimeOver);
+    }
     
     IEnumerator TimerCoroutine() {
         yield return new WaitForSeconds(time);

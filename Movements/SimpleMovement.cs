@@ -22,7 +22,7 @@ public class SimpleMovement : MonoBehaviour
     private float angularSpeed = 5;
 
     [SerializeField]
-    private bool cantRotate = true;
+    private bool canRotate = true;
 
     //< Referencias
     new private Rigidbody rigidbody;
@@ -34,7 +34,7 @@ public class SimpleMovement : MonoBehaviour
     //< Properties
     public Vector3 Velocity {get => rigidbody.velocity; set => rigidbody.velocity = value; }
     public float SpeedMovement {get => speedMovement; set => speedMovement = value; }
-    public bool CantRotate {get => cantRotate; set => cantRotate = value; }
+    public bool CantRotate {get => canRotate; set => canRotate = value; }
     //>
     void Update()
     {
@@ -53,7 +53,7 @@ public class SimpleMovement : MonoBehaviour
         rigidbody.velocity = new Vector3(inputVector.x, 0, inputVector.y) * speedMovement * Time.fixedDeltaTime * 25f; 
 
         if (Input.GetAxisRaw(horizontalAxis) != 0 | Input.GetAxisRaw(verticalAxis)  != 0) {
-            if (cantRotate)
+            if (canRotate)
                 UpdateRotation();
         }
     }

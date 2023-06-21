@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-
+using System;
+[Obsolete("This class is obsolete, use ObjectPooler")]
 public class ObjectPooling : MonoBehaviour
 {
     [Space(10)]
